@@ -1,0 +1,87 @@
+{
+  "kind": "collectionType",
+  "collectionName": "careers",
+  "info": {
+    "singularName": "career",
+    "pluralName": "careers",
+    "displayName": "Career",
+    "description": "Job openings and career opportunities at Hotel Sujata Palace"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "jobTitle": {
+      "type": "string",
+      "required": true,
+      "maxLength": 150
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "jobTitle",
+      "required": true
+    },
+    "department": {
+      "type": "enumeration",
+      "enum": [
+        "Front Office",
+        "Food & Beverage",
+        "Housekeeping",
+        "Kitchen",
+        "Security",
+        "Maintenance",
+        "Sales & Marketing",
+        "Accounts",
+        "Management",
+        "Other"
+      ],
+      "required": true
+    },
+    "jobType": {
+      "type": "enumeration",
+      "enum": [
+        "Full-time",
+        "Part-time",
+        "Internship",
+        "Contract",
+        "Volunteer"
+      ],
+      "default": "Full-time"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "requirements": {
+      "type": "richtext"
+    },
+    "salaryRange": {
+      "type": "string",
+      "maxLength": 100,
+      "comment": "e.g. NPR 15,000 - 25,000 per month"
+    },
+    "vacancies": {
+      "type": "integer",
+      "default": 1,
+      "min": 1
+    },
+    "deadline": {
+      "type": "date",
+      "comment": "Application deadline"
+    },
+    "isActive": {
+      "type": "boolean",
+      "default": true
+    },
+    "contactEmail": {
+      "type": "email",
+      "default": "hotelsujatapalace@gmail.com"
+    },
+    "experienceRequired": {
+      "type": "string",
+      "maxLength": 100,
+      "comment": "e.g. 1-2 years"
+    }
+  }
+}

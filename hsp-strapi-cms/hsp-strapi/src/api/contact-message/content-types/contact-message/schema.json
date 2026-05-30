@@ -1,0 +1,65 @@
+{
+  "kind": "collectionType",
+  "collectionName": "contact_messages",
+  "info": {
+    "singularName": "contact-message",
+    "pluralName": "contact-messages",
+    "displayName": "Contact Message",
+    "description": "Messages submitted via the contact form on hotelsujatapalace.com.np"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100
+    },
+    "email": {
+      "type": "email",
+      "required": true
+    },
+    "phone": {
+      "type": "string",
+      "maxLength": 20
+    },
+    "subject": {
+      "type": "enumeration",
+      "enum": [
+        "Room Booking",
+        "Banquet Enquiry",
+        "Restaurant Reservation",
+        "Career Enquiry",
+        "General Enquiry",
+        "Feedback",
+        "Other"
+      ],
+      "default": "General Enquiry"
+    },
+    "message": {
+      "type": "text",
+      "required": true,
+      "maxLength": 2000
+    },
+    "isRead": {
+      "type": "boolean",
+      "default": false,
+      "comment": "Mark as read in admin panel"
+    },
+    "isReplied": {
+      "type": "boolean",
+      "default": false
+    },
+    "adminReply": {
+      "type": "text",
+      "comment": "Admin's reply note (internal)"
+    },
+    "ipAddress": {
+      "type": "string",
+      "maxLength": 50,
+      "comment": "Submitter IP (for spam prevention)"
+    }
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "kind": "collectionType",
+  "collectionName": "rooms",
+  "info": {
+    "singularName": "room",
+    "pluralName": "rooms",
+    "displayName": "Room",
+    "description": "Hotel room types with pricing and amenities"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100,
+      "comment": "e.g. Deluxe Room, Super Deluxe, Family Suite"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
+    },
+    "roomType": {
+      "type": "enumeration",
+      "enum": [
+        "Standard",
+        "Deluxe",
+        "Super Deluxe",
+        "Suite",
+        "Family Room",
+        "Executive"
+      ],
+      "required": true,
+      "default": "Deluxe"
+    },
+    "description": {
+      "type": "richtext",
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
+      "maxLength": 300
+    },
+    "pricePerNight": {
+      "type": "decimal",
+      "required": true,
+      "comment": "Price in NPR"
+    },
+    "discountedPrice": {
+      "type": "decimal",
+      "comment": "Optional discounted price in NPR"
+    },
+    "currency": {
+      "type": "string",
+      "default": "NPR",
+      "maxLength": 10
+    },
+    "maxGuests": {
+      "type": "integer",
+      "required": true,
+      "default": 2,
+      "min": 1,
+      "max": 10
+    },
+    "bedType": {
+      "type": "enumeration",
+      "enum": [
+        "Single",
+        "Double",
+        "King",
+        "Twin",
+        "Queen"
+      ],
+      "required": true
+    },
+    "bedCount": {
+      "type": "integer",
+      "default": 1,
+      "min": 1
+    },
+    "roomSize": {
+      "type": "string",
+      "comment": "e.g. 30 sq.m"
+    },
+    "floor": {
+      "type": "integer",
+      "comment": "Floor number"
+    },
+    "isAvailable": {
+      "type": "boolean",
+      "default": true
+    },
+    "isFeatured": {
+      "type": "boolean",
+      "default": false,
+      "comment": "Show on homepage featured section"
+    },
+    "amenities": {
+      "type": "json",
+      "comment": "Array of amenity strings e.g. [\"AC\", \"Free WiFi\", \"TV\", \"Hot Water\"]"
+    },
+    "images": {
+      "type": "media",
+      "multiple": true,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "coverImage": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": ["images"]
+    },
+    "sortOrder": {
+      "type": "integer",
+      "default": 0,
+      "comment": "Order for display (lower = first)"
+    }
+  }
+}

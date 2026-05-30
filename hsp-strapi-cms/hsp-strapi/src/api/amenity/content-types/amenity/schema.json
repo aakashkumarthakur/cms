@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "amenities",
+  "info": {
+    "singularName": "amenity",
+    "pluralName": "amenities",
+    "displayName": "Amenity",
+    "description": "Hotel facilities and services (WiFi, AC, Restaurant, etc.)"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "maxLength": 100,
+      "comment": "e.g. Free Wi-Fi, AC, Restaurant, Parking"
+    },
+    "description": {
+      "type": "text",
+      "maxLength": 500
+    },
+    "icon": {
+      "type": "string",
+      "maxLength": 100,
+      "comment": "Icon name or SVG path class"
+    },
+    "category": {
+      "type": "enumeration",
+      "enum": [
+        "Room",
+        "Food & Beverage",
+        "Connectivity",
+        "Transportation",
+        "Events",
+        "General"
+      ],
+      "default": "General"
+    },
+    "isHighlighted": {
+      "type": "boolean",
+      "default": false,
+      "comment": "Show in homepage amenities section"
+    },
+    "sortOrder": {
+      "type": "integer",
+      "default": 0
+    }
+  }
+}
